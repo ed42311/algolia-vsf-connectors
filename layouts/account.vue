@@ -1,7 +1,7 @@
 <template>
   <div>
     <TopBar class="desktop-only" />
-    <div id="layout" >
+    <div id="layout">
       <AppHeader />
       <nuxt />
       <BottomNavigation />
@@ -24,8 +24,8 @@ export default {
     AppHeader,
     BottomNavigation,
     CartSidebar,
-    LoginModal
-  }
+    LoginModal,
+  },
 };
 </script>
 

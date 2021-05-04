@@ -1,8 +1,8 @@
-const { resolve } = require("path");
-const { readFileSync } = require("fs");
+const { resolve } = require('path');
+const { readFileSync } = require('fs');
 
-const babelConfigPath = resolve(__dirname, ".babelrc");
+const babelConfigPath = resolve(__dirname, '.babelrc');
 
-const babelConfig = JSON.parse(readFileSync(babelConfigPath, "utf-8"));
+const babelConfig = JSON.parse(readFileSync(babelConfigPath, 'utf-8'));
 
 module.exports = babelConfig;

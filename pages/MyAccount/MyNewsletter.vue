@@ -27,12 +27,15 @@
             class="form__element"
           />
         </div>
-        <SfButton data-cy="newsletter-btn_join" class="form__button">Save changes</SfButton>
+        <SfButton data-cy="newsletter-btn_join" class="form__button"
+          >Save changes</SfButton
+        >
       </div>
       <p class="notice">
-        I have read and understand the <SfLink class="notice__link" href="#">Privacy</SfLink> and
-        <SfLink class="notice__link" href="#">Cookies Policy</SfLink> and agree to receive personalized
-        commercial information from Brand name by email.
+        I have read and understand the
+        <SfLink class="notice__link" href="#">Privacy</SfLink> and
+        <SfLink class="notice__link" href="#">Cookies Policy</SfLink> and agree
+        to receive personalized commercial information from Brand name by email.
       </p>
     </SfTab>
   </SfTabs>
@@ -46,15 +49,15 @@ export default {
     SfTabs,
     SfCheckbox,
     SfButton,
-    SfLink
+    SfLink,
   },
   data() {
     return { newsletter: [] };
-  }
+  },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .tab-orphan {
   @include for-mobile {
     --tabs-title-display: none;
@@ -74,7 +77,8 @@ export default {
   }
   &__title {
     margin: 0 0 var(--spacer-xl) 0;
-    font: var(--font-weight--normal) var(--font-size--base) / 1.6 var(--font-family--primary);
+    font: var(--font-weight--normal) var(--font-size--base) / 1.6
+      var(--font-family--primary);
   }
   &__button {
     --button-width: 100%;
@@ -85,14 +89,16 @@ export default {
 }
 .message {
   margin: 0 0 var(--spacer-xl) 0;
-  font: var(--font-weight--light) var(--font-size--base) / 1.6 var(--font-family--primary);
+  font: var(--font-weight--light) var(--font-size--base) / 1.6
+    var(--font-family--primary);
   &__label {
     font-weight: 500;
   }
 }
 .notice {
   margin: var(--spacer-xl) 0 0 0;
-  font: var(--font-weight--light) var(--font-size--sm) / 1.6 var(--font-family--primary);
+  font: var(--font-weight--light) var(--font-size--sm) / 1.6
+    var(--font-family--primary);
   &__link {
     color: var(--c-text-muted);
     text-decoration: none;
@@ -101,5 +107,4 @@ export default {
     }
   }
 }
-
 </style>

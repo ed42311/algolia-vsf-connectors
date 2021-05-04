@@ -2,12 +2,12 @@
   <SfFooter :column="4" multiple id="footer">
     <SfFooterColumn :title="$t('About us')">
       <SfList>
-        <SfListItem
-          v-for="item in aboutUs"
-          :key="item"
-          >
+        <SfListItem v-for="item in aboutUs" :key="item">
           <SfMenuItem
-            :data-cy="`app-foter-url_about-us_${item.split(' ').join('-').toLowerCase()}`"
+            :data-cy="`app-foter-url_about-us_${item
+              .split(' ')
+              .join('-')
+              .toLowerCase()}`"
             :label="$t(item)"
           />
         </SfListItem>
@@ -15,12 +15,12 @@
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Departments')">
       <SfList>
-        <SfListItem
-          v-for="item in departments"
-          :key="item"
-        >
+        <SfListItem v-for="item in departments" :key="item">
           <SfMenuItem
-            :data-cy="`app-foter-url_departments_${item.split(' ').join('-').toLowerCase()}`"
+            :data-cy="`app-foter-url_departments_${item
+              .split(' ')
+              .join('-')
+              .toLowerCase()}`"
             :label="$t(item)"
           />
         </SfListItem>
@@ -28,12 +28,12 @@
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Help')">
       <SfList>
-        <SfListItem
-          v-for="item in help"
-          :key="item"
-        >
+        <SfListItem v-for="item in help" :key="item">
           <SfMenuItem
-            :data-cy="`app-foter-url_help_${item.split(' ').join('-').toLowerCase()}`"
+            :data-cy="`app-foter-url_help_${item
+              .split(' ')
+              .join('-')
+              .toLowerCase()}`"
             :label="$t(item)"
           />
         </SfListItem>
@@ -41,12 +41,12 @@
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Payment & Delivery')">
       <SfList>
-        <SfListItem
-          v-for="item in paymentsDelivery"
-          :key="item"
-        >
+        <SfListItem v-for="item in paymentsDelivery" :key="item">
           <SfMenuItem
-            :data-cy="`app-foter-url_payment_${item.split(' ').join('-').toLowerCase()}`"
+            :data-cy="`app-foter-url_payment_${item
+              .split(' ')
+              .join('-')
+              .toLowerCase()}`"
             :label="$t(item)"
           />
         </SfListItem>
@@ -54,7 +54,14 @@
     </SfFooterColumn>
     <SfFooterColumn title="Social">
       <div class="footer__socials">
-        <SfImage class="footer__social-image" v-for="item in social" :key="item" :src="'/icons/'+item+'.svg'" width="12" height="12" />
+        <SfImage
+          class="footer__social-image"
+          v-for="item in social"
+          :key="item"
+          :src="'/icons/' + item + '.svg'"
+          width="12"
+          height="12"
+        />
       </div>
     </SfFooterColumn>
   </SfFooter>
@@ -68,7 +75,7 @@ export default {
     SfFooter,
     SfList,
     SfImage,
-    SfMenuItem
+    SfMenuItem,
   },
   data() {
     return {
@@ -78,9 +85,9 @@ export default {
       paymentsDelivery: ['Purchase terms', 'Guarantee'],
       social: ['facebook', 'pinterest', 'twitter', 'youtube'],
       isMobile: false,
-      desktopMin: 1024
+      desktopMin: 1024,
     };
-  }
+  },
 };
 </script>
 

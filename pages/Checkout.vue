@@ -59,11 +59,11 @@ export default {
       showCartPreview.value = false;
     };
 
-    const updateStep = next => {
+    const updateStep = (next) => {
       currentStep.value = next;
     };
 
-    const handleNextStep = nextStep => {
+    const handleNextStep = (nextStep) => {
       context.root.$router.push(
         nextStep < 4 ? STEPS[nextStep].name : 'thank-you',
       );

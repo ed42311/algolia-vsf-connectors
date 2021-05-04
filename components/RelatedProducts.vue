@@ -16,19 +16,19 @@
             :image="productGetters.getCoverImage(product)"
             :regular-price="
               productGetters.getFormattedPrice(
-                productGetters.getPrice(product).regular
+                productGetters.getPrice(product).regular,
               )
             "
             :special-price="
               productGetters.getFormattedPrice(
-                productGetters.getPrice(product).special
+                productGetters.getPrice(product).special,
               )
             "
             :link="
               localePath(
                 `/p/${productGetters.getId(product)}/${productGetters.getSlug(
-                  product
-                )}`
+                  product,
+                )}`,
               )
             "
           />
@@ -43,13 +43,13 @@ import {
   SfCarousel,
   SfProductCard,
   SfSection,
-  SfLoader
-} from "@storefront-ui/vue";
+  SfLoader,
+} from '@storefront-ui/vue';
 
-import { productGetters } from "@spryker-vsf/composables";
+import { productGetters } from '@spryker-vsf/composables';
 
 export default {
-  name: "RelatedProducts",
+  name: 'RelatedProducts',
   setup() {
     return { productGetters };
   },
@@ -57,13 +57,13 @@ export default {
     SfCarousel,
     SfProductCard,
     SfSection,
-    SfLoader
+    SfLoader,
   },
   props: {
     title: String,
     products: Array,
-    loading: Boolean
-  }
+    loading: Boolean,
+  },
 };
 </script>
 

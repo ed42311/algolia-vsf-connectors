@@ -52,15 +52,15 @@
 </template>
 
 <script>
-import { SfBottomNavigation, SfIcon, SfCircleIcon } from "@storefront-ui/vue";
-import { useUiState } from "~/composables";
-import { useUser } from "@spryker-vsf/composables";
+import { SfBottomNavigation, SfIcon, SfCircleIcon } from '@storefront-ui/vue';
+import { useUiState } from '~/composables';
+import { useUser } from '@spryker-vsf/composables';
 
 export default {
   components: {
     SfBottomNavigation,
     SfIcon,
-    SfCircleIcon
+    SfCircleIcon,
   },
   setup(props, { root }) {
     const {
@@ -73,7 +73,7 @@ export default {
 
     const handleAccountClick = async () => {
       if (isAuthenticated.value) {
-        return root.$router.push("/my-account");
+        return root.$router.push('/my-account');
       }
       toggleLoginModal();
     };
@@ -84,6 +84,6 @@ export default {
       handleAccountClick,
       toggleMobileMenu,
     };
-  }
+  },
 };
 </script>

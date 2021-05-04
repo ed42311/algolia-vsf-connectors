@@ -471,7 +471,7 @@ export default {
     if (!cart.value?.products?.length) {
       context.root.$router.push('/');
     }
-    
+
     const { shippingDetails } = useCheckoutShipping('checkout');
     const {
       load: loadBilling,

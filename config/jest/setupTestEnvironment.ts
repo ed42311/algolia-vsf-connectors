@@ -1,6 +1,6 @@
-import "@babel/polyfill";
+import '@babel/polyfill';
 
-import Vue from "vue";
-import VueCompositionAPI from "@vue/composition-api";
+import Vue from 'vue';
+import VueCompositionAPI from '@vue/composition-api';
 
 Vue.use(VueCompositionAPI);

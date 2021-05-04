@@ -116,7 +116,7 @@
           />
         </ValidationProvider>
         <ValidationProvider
-          :rules="`required|oneOf:${countries.map(c => c.name).join(',')}`"
+          :rules="`required|oneOf:${countries.map((c) => c.name).join(',')}`"
           v-slot="{ errors }"
           class="form__element"
         >
@@ -157,36 +157,31 @@
         />
       </ValidationProvider>
       <SfButton data-cy="billing-details-btn_update" class="form__button">
-        {{ isNew ? "Add the address" : "Update the address" }}
+        {{ isNew ? 'Add the address' : 'Update the address' }}
       </SfButton>
     </form>
   </ValidationObserver>
 </template>
 
 <script>
-import {
-  SfInput,
-  SfButton,
-  SfSelect,
-  SfCheckbox
-} from '@storefront-ui/vue';
+import { SfInput, SfButton, SfSelect, SfCheckbox } from '@storefront-ui/vue';
 import { required, min, oneOf } from 'vee-validate/dist/rules';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
 import { reactive } from '@vue/composition-api';
 
 extend('required', {
   ...required,
-  message: 'This field is required'
+  message: 'This field is required',
 });
 
 extend('min', {
   ...min,
-  message: 'The field should have at least {length} characters'
+  message: 'The field should have at least {length} characters',
 });
 
 extend('oneOf', {
   ...oneOf,
-  message: 'Invalid country'
+  message: 'Invalid country',
 });
 
 export default {
@@ -198,7 +193,7 @@ export default {
     SfSelect,
     SfCheckbox,
     ValidationProvider,
-    ValidationObserver
+    ValidationObserver,
   },
 
   props: {
@@ -215,13 +210,13 @@ export default {
         postalCode: '',
         country: '',
         phone: '',
-        isDefault: false
-      })
+        isDefault: false,
+      }),
     },
     isNew: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
 
   setup(props, { emit }) {
@@ -236,7 +231,7 @@ export default {
       postalCode: props.address.postalCode,
       country: props.address.country,
       phone: props.address.phone,
-      isDefault: props.address.isDefault
+      isDefault: props.address.isDefault,
     });
 
     const submitForm = () => {
@@ -244,20 +239,20 @@ export default {
         form,
         onComplete: () => {},
         // TODO: Handle Error
-        onError: () => {}
+        onError: () => {},
       });
     };
 
     return {
       form,
       submitForm,
-      countries: []
+      countries: [],
     };
-  }
+  },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .form {
   &__element {
     display: block;

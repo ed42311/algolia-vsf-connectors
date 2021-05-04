@@ -10,9 +10,7 @@
         data-cy="billing-details-tab_change"
         :title="isNewAddress ? 'Add the address' : 'Update the address'"
       >
-        <p class="message">
-          Keep your addresses and contact details updated.
-        </p>
+        <p class="message">Keep your addresses and contact details updated.</p>
 
         <BillingAddressForm
           :address="activeAddress"
@@ -79,21 +77,21 @@
   </transition>
 </template>
 <script>
-import { SfTabs, SfButton, SfIcon } from "@storefront-ui/vue";
-import UserBillingAddress from "~/components/UserBillingAddress";
-import BillingAddressForm from "~/components/MyAccount/BillingAddressForm";
-import { useUserBilling, userBillingGetters } from "@spryker-vsf/composables";
-import { ref, computed } from "@vue/composition-api";
-import { onSSR } from "@vue-storefront/core";
+import { SfTabs, SfButton, SfIcon } from '@storefront-ui/vue';
+import UserBillingAddress from '~/components/UserBillingAddress';
+import BillingAddressForm from '~/components/MyAccount/BillingAddressForm';
+import { useUserBilling, userBillingGetters } from '@spryker-vsf/composables';
+import { ref, computed } from '@vue/composition-api';
+import { onSSR } from '@vue-storefront/core';
 
 export default {
-  name: "BillingDetails",
+  name: 'BillingDetails',
   components: {
     SfTabs,
     SfButton,
     SfIcon,
     UserBillingAddress,
-    BillingAddressForm
+    BillingAddressForm,
   },
   setup() {
     const {
@@ -101,10 +99,10 @@ export default {
       load,
       addAddress,
       deleteAddress,
-      updateAddress
+      updateAddress,
     } = useUserBilling();
     const addresses = computed(() =>
-      userBillingGetters.getAddresses(billing.value)
+      userBillingGetters.getAddresses(billing.value),
     );
     const edittingAddress = ref(false);
     const activeAddress = ref(undefined);
@@ -115,7 +113,7 @@ export default {
       edittingAddress.value = true;
     };
 
-    const removeAddress = address => deleteAddress(address);
+    const removeAddress = (address) => deleteAddress(address);
 
     const saveAddress = async ({ form, onComplete, onError }) => {
       try {
@@ -142,9 +140,9 @@ export default {
       addresses,
       edittingAddress,
       activeAddress,
-      isNewAddress
+      isNewAddress,
     };
-  }
+  },
 };
 </script>
 

@@ -161,32 +161,32 @@
   </div>
 </template>
 <script>
-import { ref, watch } from "@vue/composition-api";
+import { ref, watch } from '@vue/composition-api';
 import {
   SfModal,
   SfInput,
   SfButton,
   SfCheckbox,
   SfLoader,
-  SfAlert
-} from "@storefront-ui/vue";
-import { ValidationProvider, ValidationObserver, extend } from "vee-validate";
-import { required, email } from "vee-validate/dist/rules";
-import { useUser } from "@spryker-vsf/composables";
-import { useUiState } from "~/composables";
+  SfAlert,
+} from '@storefront-ui/vue';
+import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
+import { required, email } from 'vee-validate/dist/rules';
+import { useUser } from '@spryker-vsf/composables';
+import { useUiState } from '~/composables';
 
-extend("email", {
+extend('email', {
   ...email,
-  message: "Invalid email"
+  message: 'Invalid email',
 });
 
-extend("required", {
+extend('required', {
   ...required,
-  message: "This field is required"
+  message: 'This field is required',
 });
 
 export default {
-  name: "LoginModal",
+  name: 'LoginModal',
   components: {
     SfModal,
     SfInput,
@@ -195,7 +195,7 @@ export default {
     SfLoader,
     SfAlert,
     ValidationProvider,
-    ValidationObserver
+    ValidationObserver,
   },
   setup() {
     const { isLoginModalOpen, toggleLoginModal } = useUiState();
@@ -211,7 +211,7 @@ export default {
       }
     });
 
-    const handleForm = fn => async () => {
+    const handleForm = (fn) => async () => {
       await fn(form.value);
       toggleLoginModal();
     };
@@ -229,9 +229,9 @@ export default {
       isLoginModalOpen,
       toggleLoginModal,
       handleLogin,
-      handleRegister
+      handleRegister,
     };
-  }
+  },
 };
 </script>
 

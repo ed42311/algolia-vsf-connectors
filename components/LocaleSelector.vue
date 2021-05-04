@@ -7,7 +7,11 @@
     >
       <SfImage :src="`/icons/langs/${locale}.png`" width="20" />
     </SfButton>
-    <SfBottomModal :is-open="isLangModalOpen" title="Choose language" @click:close="isLangModalOpen = !isLangModalOpen">
+    <SfBottomModal
+      :is-open="isLangModalOpen"
+      title="Choose language"
+      @click:close="isLangModalOpen = !isLangModalOpen"
+    >
       <SfList>
         <SfListItem v-for="lang in availableLocales" :key="lang.code">
           <a :href="switchLocalePath(lang.code)">
@@ -33,7 +37,7 @@ import {
   SfButton,
   SfList,
   SfBottomModal,
-  SfCharacteristic
+  SfCharacteristic,
 } from '@storefront-ui/vue';
 import { ref, computed } from '@vue/composition-api';
 
@@ -44,19 +48,21 @@ export default {
     SfButton,
     SfList,
     SfBottomModal,
-    SfCharacteristic
+    SfCharacteristic,
   },
   setup(props, context) {
     const { locales, locale } = context.root.$i18n;
     const isLangModalOpen = ref(false);
-    const availableLocales = computed(() => locales.filter(i => i.code !== locale));
+    const availableLocales = computed(() =>
+      locales.filter((i) => i.code !== locale),
+    );
 
     return {
       availableLocales,
       locale,
-      isLangModalOpen
+      isLangModalOpen,
     };
-  }
+  },
 };
 </script>
 

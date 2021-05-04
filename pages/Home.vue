@@ -33,8 +33,15 @@
       class="call-to-action"
     />
     <SfSection title-heading="Best Sellers" class="section">
-      <SfCarousel class="carousel" :settings="{ peek: 16, breakpoints: { 1023: { peek: 0, perView: 2 } } }">
-        <SfCarouselItem class="carousel__item" v-for="(product, i) in products" :key="i">
+      <SfCarousel
+        class="carousel"
+        :settings="{ peek: 16, breakpoints: { 1023: { peek: 0, perView: 2 } } }"
+      >
+        <SfCarouselItem
+          class="carousel__item"
+          v-for="(product, i) in products"
+          :key="i"
+        >
           <SfProductCard
             data-cy="home-url_product"
             :title="product.title"
@@ -63,7 +70,7 @@ import {
   SfCarousel,
   SfProductCard,
   SfImage,
-  SfBannerGrid
+  SfBannerGrid,
 } from '@storefront-ui/vue';
 import InstagramFeed from '~/components/InstagramFeed.vue';
 
@@ -78,7 +85,7 @@ export default {
     SfCarousel,
     SfProductCard,
     SfImage,
-    SfBannerGrid
+    SfBannerGrid,
   },
   data() {
     return {
@@ -88,7 +95,7 @@ export default {
           subtitle: 'SUMMER COLLECTION 2019',
           buttonText: 'Learn more',
           background: '#eceff1',
-          image: '/homepage/bannerH.webp'
+          image: '/homepage/bannerH.webp',
         },
         {
           title: 'Colorful summer dresses are already in store',
@@ -97,15 +104,15 @@ export default {
           background: '#efebe9',
           image: '/homepage/bannerA.webp',
           className:
-            'sf-hero-item--position-bg-top-left sf-hero-item--align-right'
+            'sf-hero-item--position-bg-top-left sf-hero-item--align-right',
         },
         {
           title: 'Colorful summer dresses are already in store',
           subtitle: 'SUMMER COLLECTION 2019',
           buttonText: 'Learn more',
           background: '#fce4ec',
-          image: '/homepage/bannerB.webp'
-        }
+          image: '/homepage/bannerB.webp',
+        },
       ],
       banners: [
         {
@@ -113,38 +120,38 @@ export default {
           subtitle: 'Dresses',
           title: 'Cocktail & Party',
           description:
-            'Find stunning women\'s cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.',
+            "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
           buttonText: 'Shop now',
           image: {
             mobile: '/homepage/bannerB.webp',
-            desktop: '/homepage/bannerF.webp'
+            desktop: '/homepage/bannerF.webp',
           },
-          class: 'sf-banner--slim'
+          class: 'sf-banner--slim',
         },
         {
           slot: 'banner-B',
           subtitle: 'Dresses',
           title: 'Linen Dresses',
           description:
-            'Find stunning women\'s cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.',
+            "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
           buttonText: 'Shop now',
           image: '/homepage/bannerE.webp',
-          class: 'sf-banner--slim banner-central'
+          class: 'sf-banner--slim banner-central',
         },
         {
           slot: 'banner-C',
           subtitle: 'T-Shirts',
           title: 'The Office Life',
           image: '/homepage/bannerC.webp',
-          class: 'sf-banner--slim banner__tshirt'
+          class: 'sf-banner--slim banner__tshirt',
         },
         {
           slot: 'banner-D',
           subtitle: 'Summer Sandals',
           title: 'Eco Sandals',
           image: '/homepage/bannerG.webp',
-          class: 'sf-banner--slim'
-        }
+          class: 'sf-banner--slim',
+        },
       ],
       products: [
         {
@@ -152,65 +159,65 @@ export default {
           image: '/homepage/productA.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: true
+          isOnWishlist: true,
         },
         {
           title: 'Cream Beach Bag',
           image: '/homepage/productB.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: false
+          isOnWishlist: false,
         },
         {
           title: 'Cream Beach Bag',
           image: '/homepage/productC.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: false
+          isOnWishlist: false,
         },
         {
           title: 'Cream Beach Bag',
           image: '/homepage/productA.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: false
+          isOnWishlist: false,
         },
         {
           title: 'Cream Beach Bag',
           image: '/homepage/productB.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: false
+          isOnWishlist: false,
         },
         {
           title: 'Cream Beach Bag',
           image: '/homepage/productC.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: false
+          isOnWishlist: false,
         },
         {
           title: 'Cream Beach Bag',
           image: '/homepage/productA.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: false
+          isOnWishlist: false,
         },
         {
           title: 'Cream Beach Bag',
           image: '/homepage/productB.webp',
           price: { regular: '50.00 $' },
           rating: { max: 5, score: 4 },
-          isOnWishlist: false
-        }
-      ]
+          isOnWishlist: false,
+        },
+      ],
     };
   },
   methods: {
     toggleWishlist(index) {
       this.products[index].isOnWishlist = !this.products[index].isOnWishlist;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -260,7 +267,7 @@ export default {
 }
 
 .carousel {
-    margin: 0 calc(var(--spacer-sm) * -1) 0 0;
+  margin: 0 calc(var(--spacer-sm) * -1) 0 0;
   @include for-desktop {
     margin: 0;
   }

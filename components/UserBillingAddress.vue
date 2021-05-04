@@ -21,8 +21,8 @@ export default {
   props: {
     address: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
 
   setup(props) {
@@ -31,8 +31,8 @@ export default {
     const street = computed(() => {
       const parts = [
         address.streetName,
-        address.streetNumber && ` ${ address.streetNumber }`,
-        address.apartment && `, Apartment ${ address.apartment }`
+        address.streetNumber && ` ${address.streetNumber}`,
+        address.apartment && `, Apartment ${address.apartment}`,
       ];
 
       return parts.filter(Boolean).join('');
@@ -45,9 +45,9 @@ export default {
 
     return {
       street,
-      country
+      country,
     };
-  }
+  },
 };
 </script>
 

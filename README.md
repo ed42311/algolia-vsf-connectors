@@ -4,7 +4,7 @@
 
 ## Documentation
 
-This project is based on [NuxtJs](https://nuxtjs.org/docs/2.x/get-started/installation), [VueJs](https://vuejs.org/v2/guide/) and [VueStorefront Next](https://docs-next.vuestorefront.io/) (VSFN) and assumes that there is familiarity with these frontend techonolgies and related tools (i.e. [Yarn](https://yarnpkg.com/), [Jest](https://jestjs.io/) and [Cypress](https://www.cypress.io/)), as well as the [Spryker Commerce Operation System](https://documentation.spryker.com/) (SCOS) itself. 
+This project is based on [NuxtJs](https://nuxtjs.org/docs/2.x/get-started/installation), [VueJs](https://vuejs.org/v2/guide/) and [VueStorefront Next](https://docs-next.vuestorefront.io/) (VSFN) and assumes that there is familiarity with these frontend techonolgies and related tools (i.e. [Yarn](https://yarnpkg.com/), [Jest](https://jestjs.io/) and [Cypress](https://www.cypress.io/)), as well as the [Spryker Commerce Operation System](https://documentation.spryker.com/) (SCOS) itself.
 
 Primary documentation for the JavaScript frontend technologies can be found here:
 
@@ -44,22 +44,22 @@ At the very least, you should specify the [GLUE Rest API](https://documentation.
 {
   buildModules: [
     [
-      "@spryker-vsf/composables/nuxt",
+      '@spryker-vsf/composables/nuxt',
       {
-        baseURL: "{GLUE_API_URL}",
-        locale: "en",
-        currency: "EUR",
+        baseURL: '{GLUE_API_URL}',
+        locale: 'en',
+        currency: 'EUR',
         currencies: [
-          { name: "EUR", label: "Euro" },
-          { name: "USD", label: "Dollar" }
+          { name: 'EUR', label: 'Euro' },
+          { name: 'USD', label: 'Dollar' },
         ],
         locales: [
-          { name: "en", label: "English" },
-          { name: "de", label: "German" }
-        ]
-      }
-    ]
-  ]
+          { name: 'en', label: 'English' },
+          { name: 'de', label: 'German' },
+        ],
+      },
+    ],
+  ];
 }
 ```
 
